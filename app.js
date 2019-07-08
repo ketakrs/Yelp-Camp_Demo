@@ -19,7 +19,7 @@ var commentRoutes 	 = require("./routes/comments"),
 
 //
 //mongoose.connect("mongodb://localhost/yelp_camp_v12");
-mongoose.connect("mongodb+srv://new-user_31:passwd@yelpcamp-fvqvg.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://rusty:passwd@yelpcamp-shard-00-00-fvqvg.mongodb.net:27017,yelpcamp-shard-00-01-fvqvg.mongodb.net:27017,yelpcamp-shard-00-02-fvqvg.mongodb.net:27017/test?ssl=true&replicaSet=yelpcamp-shard-0&authSource=admin&retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname +"/public"));
