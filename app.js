@@ -51,9 +51,14 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(3000, function(req, res){
-	console.log("server on port 3000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port, function(err){
+	console.log("port is on " + port);
 });
+
 
 
 
